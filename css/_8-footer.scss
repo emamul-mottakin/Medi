@@ -1,0 +1,91 @@
+footer{
+    @include section-padding();
+    background:#152538;
+    .hr{
+        width:50px;
+        height:2px;
+        background:#fff;
+        margin:1.5rem 0;
+    }
+    .footer-grid{
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(3,min-content);
+        grid-row-gap:40px;
+        @include tablet(){
+            grid-template-columns: repeat(2,1fr);
+            grid-column-gap:25px;
+        }
+        @include leptop(){
+            grid-template-columns: repeat(3,1fr);
+            grid-column-gap:25px;
+        }
+        .about-medi{
+            @include lead();
+            color:lighten($black-color,70%);
+            p{
+                margin:1rem 0;
+            }
+            a{
+                color:lighten($black-color,70%);
+                text-decoration:none;
+                margin:1rem;
+                transition:all .3s;
+                &:hover{
+                    color:$primary-color;
+                }
+            }
+        }
+        .footer-departments{
+            h1{
+                color:$white-color;
+                font-size:25px;
+            }
+            .footer-departments-grid{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows:min-content;
+                a{
+                    display: block;
+                    text-decoration:none;
+                    color:lighten($black-color,70%);
+                    line-height:40px;
+                    transition:all .3s;
+                    &:hover{
+                        color:$primary-color;
+                    }
+                }
+            }
+        }
+        .available{
+            h1{
+                color:$white-color;
+            }
+            .available-grid{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows:min-content;
+                .available-part-2{
+                    justify-self:end;
+                }
+                p{
+                    text-decoration:none;
+                    color:lighten($black-color,70%);
+                    line-height:40px;
+                }
+            }
+        }
+    }
+    .copyright{
+        color:lighten($black-color,40%);
+        margin-top:5rem;
+        padding-top:2rem;
+        border-top:1px solid lighten($black-color,70%);
+        line-height:30px;
+        font-weight:300;
+        a{
+            text-decoration:none;
+            color:$primary-color;
+        }
+    }
+}

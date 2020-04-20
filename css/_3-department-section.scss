@@ -1,0 +1,143 @@
+#department{
+    @include section-padding();
+    background-image: url(../image/department-bg.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center;
+    .department-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(3, min-content);
+        grid-row-gap:40px;
+        .department-info{
+            display:grid;
+            grid-template-columns:1fr;
+            grid-template-rows: repeat(2,min-content);
+            @include leptop(){
+                grid-template-columns:1fr 1fr;
+            }
+            .departmrnt-info-a{
+                h3{
+                    font-size:30px;
+                    font-weight:600;
+                    @include leptop(){
+                        font-size:50px;
+                    }
+                }
+                p{
+                   @include lead();
+                   margin-bottom:3rem;
+                   @include tablet(){
+                    margin-bottom:0;
+                }
+                }
+            }
+            .departmrnt-info-b{
+                @include tablet(){
+                    justify-self:end;
+                }
+                @include leptop(){
+                    align-self:end;
+                }
+                a{
+                    @include btn-outline();
+                    @include lead();
+                    text-transform:capitalize;
+                    transition:all .5s;
+                    &:hover{
+                        background-color:mix($primary-color,$secondary-color);
+                        color:$white-color;
+                    }
+                }
+            }
+        }
+        .department-cetagori{
+            display:grid;
+            grid-template-columns:1fr;
+            grid-template-rows: repeat(6,1fr);
+            grid-row-gap:10px;
+            @include tablet(){
+                grid-template-columns: repeat(3,1fr);
+                grid-gap:30px;
+                grid-template-rows: repeat(2,150px);
+            }
+            @include leptop(){
+                grid-template-columns: repeat(6,1fr);
+                grid-column-gap:20px;
+            }
+            a{
+                text-align:center;
+                padding:1rem 0;
+                border:0.50px solid lighten($secondary-color,34%);
+                text-decoration:none;
+                color:$primary-color;
+                border-radius: 3px;
+                font-size:18px;
+                background:$white-color;
+                @include tablet(){
+                    padding:4.5rem 0;
+                }
+                @include leptop(){
+                    font-size:15px;
+                }
+            }
+            .active{
+                background-image:linear-gradient(to right,$secondary-color,mix($secondary-color,$primary-color));
+                color:$white-color;
+            }
+        }
+        .department-post{
+            display:grid;
+            grid-template-columns:1fr;
+            grid-template-rows: repeat(2,min-content);
+            grid-row-gap:40px;
+            background-color:$white-color;
+            @include leptop(){
+                grid-template-columns:1fr 1fr;
+                grid-row-gap:0;
+                grid-column-gap:30px;
+            }
+            .department-post-image{
+                img{
+                    width:100%;
+                    height:100%;
+                }
+            }
+            .department-post-info{
+                @include leptop(){
+                    align-self:center;
+                }
+                padding:0 2rem;
+                h1{
+                    font-weight: 600;
+                    font-size:20px;
+                    line-height:35px;
+                    margin-bottom:2rem;
+                    @include leptop(){
+                        font-size:23px;
+                    }
+                    @include leptop(){
+                        margin-bottom:.3rem;
+                    }
+                }
+                p{
+                    @include lead();
+                    margin-bottom:4rem;
+                    @include leptop(){
+                        margin-bottom:.3rem;
+                    }
+                }
+                a{
+                    @include btn-outline();
+                    @include lead();
+                    text-transform:capitalize;
+                    color:$primary-color;
+                    &:hover{
+                        background:$secondary-color;
+                        color:$white-color;
+                    }
+                }
+            }
+        }
+    }
+}

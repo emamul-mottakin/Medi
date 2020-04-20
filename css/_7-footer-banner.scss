@@ -1,0 +1,120 @@
+#footer-banner{
+    position: relative;
+    color:$white-color;
+    &::after{
+        content:"";
+        position: absolute;
+        background-image: url(../image/footer-banner-1.jpg);
+        background-repeat: no-repeat;
+        background-size:cover;
+        width:100%;
+        height:100%;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        @include tablet(){
+            width:50%;
+        }
+    }
+    &::before{
+        content:"";
+        position: absolute;
+        background-color:transparentize($primary-color, 0.05);
+        top: 0;
+        left: 0;
+        width:100%;
+        height:100%;
+        z-index:-1;
+        @include tablet(){
+            width:50%;
+            background-color:rgba(68, 202, 255, 0.767);
+        
+        }
+    }
+    .footer-banner-overlay{
+        @include section-padding();
+        @include tablet(){
+
+
+            background: rgba(0, 0, 0, 0.301);
+            position: relative;
+            &::after{
+                content:"";
+                position: absolute;
+                right: 0;
+                top: 0;
+                background-image: url(../image/footer-banner-2.jpg);
+                background-repeat: no-repeat;
+                background-size:cover;
+                width:50%;
+                height: 100%;
+                z-index:-2;
+            }
+            &::before{
+                content:"";
+                position:absolute;
+                right:0;
+                top: 0;
+                background:transparentize($primary-color, 0.2);
+                width:50%;
+                height: 100%;
+                z-index:-1;
+            }
+
+
+        }
+        .footer-banner-grid{
+            display: grid;
+            grid-template-columns:1fr;
+            grid-template-rows: repeat(2,min-content);
+            grid-row-gap:30px;
+            @include leptop(){
+                grid-template-columns: repeat(2,1fr);
+                grid-column-gap:50px;
+                align-items:center;
+                justify-items:center;
+            }
+            .banner-part-1{
+                p{
+                    font-size:17px;
+                }
+                h1{
+                    margin:1rem 0 1.5rem;
+                    font-size:25px;
+                    @include tablet(){
+                        font-size:50px;
+                    }
+                }
+                a{
+                    @include btn-outline();
+                    border: 1px solid $white-color;
+                    transition:all .5s;
+                    &:hover{
+                        background:$white-color;
+                        color:$black-color;
+                    }
+                }
+            }
+            .banner-part-2{
+                i{
+                    display: inline-block;
+                    font-size:35px;
+                    margin-right:10px;
+                    @include tablet(){
+                        font-size:50px;
+                        margin-right:20px;
+                    }
+                }
+                span{
+                    display: inline-block;
+                    span{
+                        font-size:32px;
+                        @include tablet(){
+                            font-size:60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

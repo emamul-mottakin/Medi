@@ -1,0 +1,66 @@
+.header{
+    background-image: url(../image/header.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    position:relative;
+    z-index:1;
+    padding-bottom:5rem;
+    &:after{
+        position:absolute;
+        content:"";
+        width:100%;
+        height:100%;
+        background-color:rgba(12, 45, 122, 0.76);
+        top:0;
+        left:0;
+        z-index:-1;
+}
+#header-section{
+
+    }.header-grid{
+        color:$white-color;
+        padding:5rem 0 6rem 0;
+        @include tablet(){
+            padding:7rem 0 11rem 0;
+        }
+        @include leptop(){
+            padding:13rem 0 15rem 0;
+        }
+        p:first-child{
+            text-transform:uppercase;
+            font-size:17px;
+            margin-bottom:1.5rem;
+            font-weight:300;
+        }
+        h1{
+            font-size:33px;
+            @include tablet(){
+                font-size:60px;
+            }
+            @include leptop(){
+                font-size:75px;
+            }
+        }
+        p:nth-child(3){
+            font-size:33px;
+            font-weight:300;
+            margin-bottom:2.5rem;
+            @include tablet(){
+                font-size:55px;
+            }
+            @include leptop(){
+                font-size:70px;
+            }
+        }
+        a{
+            @include btn-outline();
+            border: 1px solid $white-color;
+            &:hover{
+                color:$black-color;
+                background-color:$white-color;
+            }
+        }
+    }
+    
+}

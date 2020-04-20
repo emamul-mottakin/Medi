@@ -1,0 +1,69 @@
+#welcome-section{
+    @include section-padding();
+    .welcome-section-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:repeat(2,min-content);
+        grid-row-gap:5rem;
+        @include leptop(){
+            grid-template-columns:1fr 1fr;
+            grid-column-gap:5rem;
+            grid-row-gap:0;
+        }
+        .welcome-picture{
+            position:relative;
+            &:after{
+                content:"";
+                position:absolute;
+                background-color:#E0FBFF;
+                width:95%;
+                height:100%;
+                z-index:-1;
+                top:25px;
+                border-radius:10px;
+            }
+            &
+            img{
+                width:95%;
+                float:right;
+                border-radius:10px;
+            }
+        }
+        .welcome-info{
+            p:first-child{
+                font-size:33px;
+                font-weight:300;
+                @include tablet(){
+                    font-size:50px;
+                }
+            }
+            h1{
+                font-size:30px;
+                @include tablet(){
+                    font-size:50px;
+                }
+            }
+            p:nth-child(3){
+                margin:3rem 0 2rem 0;
+                color: lighten($black-color, 50%);
+                line-height:25px;
+                font-weight:300;
+            }
+            ul {
+                margin-bottom:4rem;
+                li{
+                    list-style:inside;
+                    line-height:25px;
+                    @include tablet(){
+                        line-height:40px;
+                    }
+                }
+            }
+            .btn{
+                @include btn();
+                background-image:linear-gradient(to right, $secondary-color,lighten($primary-color,20%));
+                text-transform:capitalize;
+            }
+        }
+    }
+}

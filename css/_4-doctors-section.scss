@@ -1,0 +1,100 @@
+#doctors{
+    padding:5rem 0 12rem;
+    @include tablet(){
+        padding:6rem 0 5rem 0;
+    }
+    @include leptop(){
+        padding:6rem 0 12rem 0;
+    }
+    //doctors section heading start :)
+    .doctors-section-heading{
+        @include leptop(){
+            display:grid;
+            grid-template-columns: repeat(12,1fr);
+        }
+        text-align:center;
+        .heading-content{
+            h1{
+                font-size:27px;
+                line-height:33px;
+                @include tablet(){
+                    font-size:33px;
+                }
+                @include leptop(){
+                    font-size:50px;
+                    font-weight:600;
+                }
+            }
+            p{
+                @include lead();
+                @include tablet(){
+                    margin:2rem 0;
+                }
+            }
+            @include leptop(){
+                grid-column:3/11;
+            }
+        }
+    }
+    //doctors information start :)
+    .doctor-section-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(3,min-content);
+        grid-row-gap:160px;
+        @include tablet(){
+            grid-template-columns: repeat(2,1fr);
+            grid-column-gap:30px;
+        }
+        @include leptop(){
+            grid-template-columns: repeat(3,1fr);
+            grid-row-gap:0px;
+        }
+        .doctor-box{
+            position: relative;
+            .doctor-image{
+                overflow: hidden;
+                border-radius:10px;
+                img{
+                    width:100%;
+                    border-radius:10px;
+                    transition:.3s;
+                    &:hover{
+                        transform:scale(1.1);
+                    }
+                }
+            }
+            .doctor-info{
+                position:absolute;
+                background:$white-color;
+                margin-top:-2rem;
+                padding:2rem 1rem 0 1rem;
+                z-index:2;
+                bottom:-100px;
+                width: 100%;
+                border-radius:10px;
+                text-align:center;
+                h1{
+                    font-weight:600;
+                    color:$secondary-color;
+                }
+                p{
+                    @include lead();
+                    padding:0 0 1.5rem 0;
+                    margin:0;
+                    border-bottom:1px solid lighten($secondary-color,35%);
+                }
+                a{
+                    color:lighten($black-color,75%);
+                    text-decoration:none;
+                    padding:0 1rem;
+                    line-height:70px;
+                    transition:.3s;
+                    &:hover{
+                        color:$primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
